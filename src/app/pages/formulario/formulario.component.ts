@@ -20,7 +20,11 @@ export class FormularioComponent implements OnInit {
   }
 
   sendForm(form: NgForm){
-
+    if (!form.valid) {
+      console.log("formulario invalido");
+    } else {
+      
+    }
   }
 
 }
