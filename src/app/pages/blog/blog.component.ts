@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/article';
 import { ArticleService } from "../../services/article/article.service";
-import { environment } from "../../../environments/environment";
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +11,7 @@ import { environment } from "../../../environments/environment";
 export class BlogComponent implements OnInit {
 
   public articles: Article[];
-  public servidor: string = environment.server;
+  
 
   constructor( private articleService: ArticleService) { }
 
