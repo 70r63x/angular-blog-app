@@ -1,12 +1,10 @@
 <div class="center">
-    <section id="content">
+    <section id="content" *ngIf="dataArticle">
         
         <article class="article-item article-detail">
-            <div class="image-wrap">
-                <div class="image-wrap">
-                    <img src="{{servidor +'/get-image/'+ dataArticle.image}}" alt="{{dataArticle.title}}" *ngIf="dataArticle.image"/>
-                    <img src="{{servidor +'/get-image/no-image.jpg'}}" alt="{{dataArticle.title}}" *ngIf="!dataArticle.image"/>
-                </div>
+            <div class="image-wrap" >
+                <img src="{{servidor +'/get-image/'+ dataArticle.image}}" alt="{{dataArticle.title}}" *ngIf="dataArticle.image"/>
+                <img src="{{servidor +'/get-image/no-image.jpg'}}" alt="{{dataArticle.title}}" *ngIf="!dataArticle.image"/>
             </div>
 
             <h1 class="subheader">{{dataArticle.title}}</h1>
@@ -17,8 +15,8 @@
                 {{dataArticle.content}}
             </p>
 
-            <a href="http://#" class="btn btn-success">Editar</a>
-            <a href="http://#" class="btn btn-success">Borrar</a>
+            <a [routerLink]="['/editar-articulo', dataArticle._id]" class="btn btn-success">Editar</a>
+            <a (click)="deletArticle(dataArticle._id)" class="btn btn-success">Borrar</a>
 
             <div class="clearfix"></div>
         </article>

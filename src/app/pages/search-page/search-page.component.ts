@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from "@angular/router";
 import { Article } from 'src/app/models/article';
-import { environment } from "../../../environments/environment";
 
 import { ArticleService } from "../../services/article/article.service";
 

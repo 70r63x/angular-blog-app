@@ -36,6 +36,22 @@ export class ArticleDetailComponent implements OnInit {
     });
   }
 
+  deletArticle(idArticle: string){
+    console.log("entre");
+    this.articleService.deleteArticle(idArticle).subscribe( resp => {
+      console.log(resp)
+      if(resp){
+        console.log(resp);
+        this.router.navigate(['/blog']);
+      }else{
+        console.log("Error al consultar data");
+      }
+    }, err =>{
+      console.log(err);
+      this.router.navigate(['']);
+    });
+  }
+
   
 
 }

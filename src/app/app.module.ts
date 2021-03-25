@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
 
 import { MomentModule } from 'angular2-moment';
+import { AngularFileUploaderModule } from "angular-file-uploader";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -19,6 +20,8 @@ import { Error404Component } from './pages/error404/error404.component';
 import { ArticlesComponent } from './sections/articles/articles.component';
 import { ArticleDetailComponent } from './pages/article-detail/article-detail.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { NewArticleComponent } from './pages/new-article/new-article.component';
+import { EditArticleComponent } from './pages/edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
@@ -34,14 +37,17 @@ import { SearchPageComponent } from './pages/search-page/search-page.component';
     Error404Component,
     ArticlesComponent,
     ArticleDetailComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    NewArticleComponent,
+    EditArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    AngularFileUploaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
